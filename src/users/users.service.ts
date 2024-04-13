@@ -153,4 +153,15 @@ export class UsersService {
     });
     return newRegister;
   };
+
+  updateUserToken = async (refreshToken: string, _id: string) => {
+    return await this.userModel.updateOne(
+      {
+        _id,
+      },
+      {
+        refreshToken,
+      },
+    );
+  };
 }
