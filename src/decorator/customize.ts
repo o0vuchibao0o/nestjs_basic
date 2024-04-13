@@ -5,9 +5,9 @@ import {
 } from "@nestjs/common";
 
 export const IS_PUBLIC_KEY = "isPublic";
-export const Public = () => SetMetadata(IS_PUBLIC_KEY, true);
+export const PublicDecorator = () => SetMetadata(IS_PUBLIC_KEY, true);
 
-export const User = createParamDecorator(
+export const UserDecorator = createParamDecorator(
   (data: unknown, ctx: ExecutionContext) => {
     const request = ctx.switchToHttp().getRequest();
     return request.user;
